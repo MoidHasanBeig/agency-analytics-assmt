@@ -1,12 +1,9 @@
-import React from 'react';
-import './main.css';
+import React from "react";
+import "./main.css";
 
 class App extends React.Component {
   render() {
-    return (
-      <div className="App">
-      </div>
-    );
+    return <div className="App"></div>;
   }
 }
 
