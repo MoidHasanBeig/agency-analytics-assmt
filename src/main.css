@@ -1,5 +1,24 @@
-.App {
-  text-align: center;
+html,
+body {
+  margin: 0;
+}
+@font-face {
+  font-family: 'Text light';
+  src: url("./assets/Nexa Light.otf");
+}
+@font-face {
+  font-family: 'Text bold';
+  src: url("./assets/Nexa Bold.otf");
+}
+@font-face {
+  font-family: 'Numbers';
+  src: url("./assets/TT Lakes.otf");
+}
+html .App,
+body .App {
+  height: 100vh;
+  width: 100vw;
+  background-color: #EEF6FB;
 }
 .error-ui {
   background-color: black;
