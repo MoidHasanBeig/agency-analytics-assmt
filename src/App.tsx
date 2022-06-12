@@ -10,18 +10,24 @@ import CitySelector from "./components/CitySelector/CitySelector";
 interface State {
   selectedCity: City;
   weatherData: FullWeatherData;
+  isFetching: boolean;
 }
 
 class App extends React.Component<{}, State> {
   state = {
     selectedCity: City.Ottawa,
     weatherData: { Ottawa: null, Moscow: null, Tokyo: null },
+    isFetching: true,
   };
 
   private setWeather = (city: City): void => {
+    this.setState({
+      isFetching: true,
+    });
     fetchWeather(city).then((res) => {
       this.setState({
         weatherData: { ...this.state.weatherData, [city]: res },
+        isFetching: false,
       });
     });
   };
@@ -41,6 +47,7 @@ class App extends React.Component<{}, State> {
     return (
       <div className="App">
         <CitySelector city={this.state.selectedCity} setCity={this.setCity} />
+        <div>{this.state.isFetching ? "loading" : "Done"}</div>
       </div>
     );
   }

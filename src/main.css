@@ -23,3 +23,24 @@ body .App {
 .error-ui {
   background-color: black;
 }
+.city-selector-component {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: space-around;
+  margin: auto;
+  height: 5rem;
+}
+.city-selector-component .city-option {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-family: 'Text light';
+  align-self: center;
+  cursor: pointer;
+  margin: 0 2rem;
+}
+.city-selector-component .city-option.active-city {
+  font-family: 'Text bold';
+  font-weight: bold;
+  color: #5FB0E8;
+}

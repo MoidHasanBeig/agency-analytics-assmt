@@ -1,1 +1,25 @@
 @import "./CitySelector.responsive.less";
+
+.city-selector-component {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-around;
+    margin: auto;
+    height: 5rem;
+
+    .city-option {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-family: 'Text light';
+        align-self: center;
+        cursor: pointer;
+        margin: 0 2rem;
+
+        &.active-city {
+            font-family: 'Text bold';
+            font-weight: bold;
+            color: @highlight-color;
+        }
+    }
+}

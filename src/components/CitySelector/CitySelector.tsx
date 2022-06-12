@@ -10,26 +10,19 @@ class CitySelector extends React.Component<Props> {
   public render() {
     return (
       <div className="city-selector-component">
-        <div
-          onClick={() => this.props.setCity(City.Ottawa)}
-          className="city-option"
-        >
-          {City.Ottawa}
-        </div>
-        <div
-          onClick={() => this.props.setCity(City.Moscow)}
-          className="city-option"
-        >
-          {City.Moscow}
-        </div>
-        <div
-          onClick={() => this.props.setCity(City.Tokyo)}
-          className="city-option"
-        >
-          {City.Tokyo}
-        </div>
-
-        {this.props.city}
+        {Object.values(City).map((city, i) => {
+          return (
+            <div
+              key={i}
+              onClick={() => this.props.setCity(city)}
+              className={`city-option ${
+                this.props.city === city && "active-city"
+              }`}
+            >
+              {city}
+            </div>
+          );
+        })}
       </div>
     );
   }
