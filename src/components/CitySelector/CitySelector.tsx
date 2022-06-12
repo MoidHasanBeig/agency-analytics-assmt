@@ -11,22 +11,22 @@ class CitySelector extends React.Component<Props> {
     return (
       <div className="city-selector-component">
         <div
-          onClick={() => this.props.setCity(City.city1)}
+          onClick={() => this.props.setCity(City.Ottawa)}
           className="city-option"
         >
-          {City.city1}
+          {City.Ottawa}
         </div>
         <div
-          onClick={() => this.props.setCity(City.city2)}
+          onClick={() => this.props.setCity(City.Moscow)}
           className="city-option"
         >
-          {City.city2}
+          {City.Moscow}
         </div>
         <div
-          onClick={() => this.props.setCity(City.city3)}
+          onClick={() => this.props.setCity(City.Tokyo)}
           className="city-option"
         >
-          {City.city3}
+          {City.Tokyo}
         </div>
 
         {this.props.city}
