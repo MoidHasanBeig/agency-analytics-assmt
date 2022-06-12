@@ -1,5 +1,8 @@
 import React from "react";
 
+// components
+import TodayCard from "../TodayCard/TodayCard";
+
 interface Props {}
 
 interface State {
@@ -13,7 +16,11 @@ class DisplayGrid extends React.Component<Props, State> {
   }
 
   public render() {
-    return <div className="display-grid-component"></div>;
+    return (
+      <div className="display-grid-component">
+        <TodayCard />
+      </div>
+    );
   }
 }
 

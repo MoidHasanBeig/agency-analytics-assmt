@@ -9,6 +9,7 @@ import { fetchWeather } from "./utils/function";
 // components
 import CitySelector from "./components/CitySelector/CitySelector";
 import DisplayGrid from "./components/DisplayGrid/DisplayGrid";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 interface State {
   selectedCity: City;
@@ -58,8 +59,10 @@ class App extends React.Component<{}, State> {
 
     return (
       <div className="App">
-        <CitySelector city={this.state.selectedCity} setCity={this.setCity} />
-        <DisplayGrid />
+        <ErrorBoundary>
+          <CitySelector city={this.state.selectedCity} setCity={this.setCity} />
+          <DisplayGrid />
+        </ErrorBoundary>
       </div>
     );
   }
