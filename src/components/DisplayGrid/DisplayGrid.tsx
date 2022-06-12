@@ -11,6 +11,10 @@ class DisplayGrid extends React.Component<Props, State> {
     super(props);
     this.state = { hasError: false };
   }
+
+  public render() {
+    return <div className="display-grid-component"></div>;
+  }
 }
 
 export default DisplayGrid;

@@ -7,7 +7,7 @@ export const fetchWeather = async (
 ): Promise<CityWeatherData | null> => {
   try {
     const data = await fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?${Coordinates[city]}&exclude=minutely,hourly,alerts,current&appid=`
+      `https://api.openweathermap.org/data/2.5/onecall?${Coordinates[city]}&exclude=minutely,hourly,alerts,current&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     );
     const weatherJson = await data.json();
     const cityWeatherData: CityWeatherData = [];

@@ -23,13 +23,22 @@ body .App {
 .error-ui {
   background-color: black;
 }
+.display-grid-component {
+  display: flex;
+  margin: auto;
+  width: 50vw;
+  height: 65vh;
+  box-shadow: #33333921 0.1rem 0.1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 0.3rem solid #FFFFFF;
+}
 .city-selector-component {
   display: flex;
   flex-direction: row;
   width: 40%;
   justify-content: space-around;
   margin: auto;
-  height: 5rem;
+  height: 6rem;
 }
 .city-selector-component .city-option {
   text-transform: uppercase;
