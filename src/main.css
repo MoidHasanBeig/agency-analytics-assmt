@@ -22,7 +22,11 @@ body .App {
   color: #333339;
 }
 .error-ui {
-  background-color: black;
+  font-family: 'Text light';
+  text-align: center;
+  display: flex;
+  margin: auto;
+  font-size: 1.4rem;
 }
 .display-grid-component {
   display: flex;
@@ -83,4 +87,49 @@ body .App {
   width: 25%;
   height: 100%;
   outline: 0.15rem solid #FFFFFF;
+  display: flex;
+  font-family: 'Text light';
+  font-size: 1.4rem;
+}
+.weekday-card-component .weekday-content-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.weekday-card-component .weekday-content-container .weekday-temp {
+  font-family: 'Numbers';
+  font-size: 1.5rem;
+}
+.loader-component {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.loader-component .spinner-loader {
+  border: 1rem solid #FFFFFF;
+  border-radius: 50%;
+  border-top: 1rem solid #5FB0E8;
+  width: 5rem;
+  height: 5rem;
+  -webkit-animation: spin 1s linear infinite;
+  /* Safari */
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

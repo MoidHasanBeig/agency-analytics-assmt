@@ -1,5 +1,8 @@
 import React from "react";
 
+// components
+import WeatherIcon from "../WeatherIcon/WeatherIcon";
+
 // utils
 import { DailyWeatherData } from "../../utils/interfaces";
 
@@ -14,6 +17,7 @@ class TodayCard extends React.Component<Props> {
         {this.props.todayWeather && (
           <div className="today-content-container">
             <div className="today-placeholder">Today</div>
+            <WeatherIcon weather={this.props.todayWeather.weather} />
             <div className="today-temp">
               {Math.floor(this.props.todayWeather.temp)}&deg;
             </div>
