@@ -1,6 +1,11 @@
 import React from "react";
 
-interface Props {}
+// utils
+import { DailyWeatherData } from "../../utils/interfaces";
+
+interface Props {
+  todayWeather: DailyWeatherData | null;
+}
 
 interface State {
   hasError: boolean;
@@ -13,7 +18,17 @@ class WeekdayCard extends React.Component<Props, State> {
   }
 
   public render() {
-    return <div className="weekday-card-component"></div>;
+    return (
+      <div className="weekday-card-component">
+        {this.props.todayWeather && (
+          <div>
+            <div>{this.props.todayWeather.day}</div>
+            <div>{this.props.todayWeather.temp}</div>
+            <div>{this.props.todayWeather.weather}</div>
+          </div>
+        )}
+      </div>
+    );
   }
 }
 
