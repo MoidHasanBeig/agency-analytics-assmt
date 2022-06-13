@@ -40,3 +40,12 @@ export enum SecondaryWeather {
   squall = "Squall",
   tornado = "Tornado",
 }
+
+export enum WeatherIconSet {
+  Thunderstorm = "faCloudBolt",
+  Drizzle = "faCloudShowersWater",
+  Rain = "faCloudShowersHeavy",
+  Snow = "faSnowflake",
+  Clear = "faSun",
+  Clouds = "faCloud",
+}
