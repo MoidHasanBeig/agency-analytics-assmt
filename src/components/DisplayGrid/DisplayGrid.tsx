@@ -2,6 +2,7 @@ import React from "react";
 
 // components
 import TodayCard from "../TodayCard/TodayCard";
+import WeekdayCard from "../WeekdayCard/WeekdayCard";
 
 interface Props {}
 
@@ -19,6 +20,12 @@ class DisplayGrid extends React.Component<Props, State> {
     return (
       <div className="display-grid-component">
         <TodayCard />
+        <div className="weekday-cards-container">
+          <WeekdayCard />
+          <WeekdayCard />
+          <WeekdayCard />
+          <WeekdayCard />
+        </div>
       </div>
     );
   }

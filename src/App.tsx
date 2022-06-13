@@ -3,7 +3,7 @@ import "./main.css";
 
 // utils
 import { City } from "./utils/enums";
-import { FullWeatherData } from "./utils/interfaces";
+import { CityWeatherData } from "./utils/interfaces";
 import { fetchWeather } from "./utils/function";
 
 // components
@@ -13,7 +13,7 @@ import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 interface State {
   selectedCity: City;
-  weatherData: FullWeatherData;
+  weatherData: CityWeatherData | null;
   isFetching: boolean;
   fetchFailed: boolean;
 }
@@ -21,7 +21,7 @@ interface State {
 class App extends React.Component<{}, State> {
   state = {
     selectedCity: City.Ottawa,
-    weatherData: { Ottawa: null, Moscow: null, Tokyo: null },
+    weatherData: null,
     isFetching: true,
     fetchFailed: false,
   };
@@ -38,7 +38,7 @@ class App extends React.Component<{}, State> {
         });
       } else {
         this.setState({
-          weatherData: { ...this.state.weatherData, [city]: res },
+          weatherData: res,
           isFetching: false,
         });
       }
@@ -47,7 +47,7 @@ class App extends React.Component<{}, State> {
 
   private setCity = (city: City): void => {
     this.setState({ selectedCity: city });
-    if (!this.state.weatherData[city]) this.setWeather(city);
+    this.setWeather(city);
   };
 
   public componentDidMount() {

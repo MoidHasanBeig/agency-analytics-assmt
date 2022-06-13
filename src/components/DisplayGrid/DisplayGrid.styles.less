@@ -2,6 +2,7 @@
 
 .display-grid-component {
     display: flex;
+    flex-direction: column;
     margin: auto;
     width: 50vw;
     height: 65vh;
@@ -9,4 +10,11 @@
     border-radius: 0.5rem;
     border: 0.3rem solid @border-color;
     overflow: hidden;
+
+    .weekday-cards-container {
+        display: flex;
+        flex-direction: row;
+        height: 45%;
+        overflow: hidden;
+    }
 }
