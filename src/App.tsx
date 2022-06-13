@@ -1,23 +1,29 @@
 import React from "react";
 import "./main.css";
+
+// utils
 import { City } from "./utils/enums";
-import { FullWeatherData } from "./utils/interfaces";
+import { CityWeatherData } from "./utils/interfaces";
 import { fetchWeather } from "./utils/function";
 
 // components
 import CitySelector from "./components/CitySelector/CitySelector";
+import DisplayGrid from "./components/DisplayGrid/DisplayGrid";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 interface State {
   selectedCity: City;
-  weatherData: FullWeatherData;
+  weatherData: CityWeatherData | null;
   isFetching: boolean;
+  fetchFailed: boolean;
 }
 
 class App extends React.Component<{}, State> {
   state = {
     selectedCity: City.Ottawa,
-    weatherData: { Ottawa: null, Moscow: null, Tokyo: null },
+    weatherData: null,
     isFetching: true,
+    fetchFailed: false,
   };
 
   private setWeather = (city: City): void => {
@@ -25,16 +31,23 @@ class App extends React.Component<{}, State> {
       isFetching: true,
     });
     fetchWeather(city).then((res) => {
-      this.setState({
-        weatherData: { ...this.state.weatherData, [city]: res },
-        isFetching: false,
-      });
+      // null response indicates an error while fetching from the API
+      if (!res) {
+        this.setState({
+          fetchFailed: true,
+        });
+      } else {
+        this.setState({
+          weatherData: res,
+          isFetching: false,
+        });
+      }
     });
   };
 
   private setCity = (city: City): void => {
     this.setState({ selectedCity: city });
-    if (!this.state.weatherData[city]) this.setWeather(city);
+    this.setWeather(city);
   };
 
   public componentDidMount() {
@@ -46,8 +59,10 @@ class App extends React.Component<{}, State> {
 
     return (
       <div className="App">
-        <CitySelector city={this.state.selectedCity} setCity={this.setCity} />
-        <div>{this.state.isFetching ? "loading" : "Done"}</div>
+        <ErrorBoundary>
+          <CitySelector city={this.state.selectedCity} setCity={this.setCity} />
+          <DisplayGrid />
+        </ErrorBoundary>
       </div>
     );
   }

@@ -23,13 +23,30 @@ body .App {
 .error-ui {
   background-color: black;
 }
+.display-grid-component {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50vw;
+  height: 65vh;
+  box-shadow: #33333921 0.1rem 0.5rem 2rem;
+  border-radius: 0.5rem;
+  border: 0.3rem solid #FFFFFF;
+  overflow: hidden;
+}
+.display-grid-component .weekday-cards-container {
+  display: flex;
+  flex-direction: row;
+  height: 45%;
+  overflow: hidden;
+}
 .city-selector-component {
   display: flex;
   flex-direction: row;
   width: 40%;
   justify-content: space-around;
   margin: auto;
-  height: 5rem;
+  height: 6rem;
 }
 .city-selector-component .city-option {
   text-transform: uppercase;
@@ -43,4 +60,14 @@ body .App {
   font-family: 'Text bold';
   font-weight: bold;
   color: #5FB0E8;
+}
+.today-card-component {
+  width: 100%;
+  height: 55%;
+  outline: 0.3rem solid #FFFFFF;
+}
+.weekday-card-component {
+  width: 25%;
+  height: 100%;
+  outline: 0.15rem solid #FFFFFF;
 }

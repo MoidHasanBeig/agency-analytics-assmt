@@ -7,14 +7,14 @@ export const fetchWeather = async (
 ): Promise<CityWeatherData | null> => {
   try {
     const data = await fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?${Coordinates[city]}&exclude=minutely,hourly,alerts,current&appid=`
+      `https://api.openweathermap.org/data/2.5/onecall?${Coordinates[city]}&exclude=minutely,hourly,alerts,current&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     );
     const weatherJson = await data.json();
     const cityWeatherData: CityWeatherData = [];
     for (let i = 0; i <= 4; i++) {
       const dailyWeatherData: DailyWeatherData = {
         day: Object.values(Day)[i],
-        temp: weatherJson.daily[i].temp.day - 273.15,
+        temp: weatherJson.daily[i].temp.max,
         weather: weatherJson.daily[i].weather[0].main,
       };
       cityWeatherData[i] = dailyWeatherData;
