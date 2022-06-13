@@ -1,0 +1,28 @@
+.loader-component {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    .spinner-loader {
+        border: @border-thick-size solid @border-color;
+        border-radius: 50%;
+        border-top: @border-thick-size solid @highlight-color;
+        width: 5rem;
+        height: 5rem;
+        -webkit-animation: spin 1s linear infinite; /* Safari */
+        animation: spin 1s linear infinite;
+        margin: auto;
+    }
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+

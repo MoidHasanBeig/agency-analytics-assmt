@@ -3,6 +3,8 @@ import React from "react";
 // components
 import TodayCard from "../TodayCard/TodayCard";
 import WeekdayCard from "../WeekdayCard/WeekdayCard";
+import Loader from "../Loader/Loader";
+import ErrorUI from "../ErrorUI/ErrorUI";
 
 // utils
 import { CityWeatherData } from "../../utils/interfaces";
@@ -18,9 +20,9 @@ class DisplayGrid extends React.Component<Props> {
     return (
       <div className="display-grid-component">
         {this.props.isFetching ? (
-          <div>Loading...</div>
+          <Loader />
         ) : this.props.fetchFailed ? (
-          <div>Error</div>
+          <ErrorUI />
         ) : (
           <React.Fragment>
             <TodayCard

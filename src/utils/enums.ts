@@ -7,7 +7,7 @@ export enum City {
 export enum Coordinates {
   Ottawa = "lat=45.421532&lon=-75.697189",
   Moscow = "lat=55.755825&lon=37.617298",
-  Tokyo = "lat=35.689487&lon=139.691711",
+  Tokyo = "lat=35.652832&lon=139.839478",
 }
 
 export enum Day {
@@ -21,7 +21,6 @@ export enum Day {
 }
 
 export enum Weather {
-  // main weather types
   thunderstorm = "Thunderstorm",
   drizzle = "Drizzle",
   rain = "Rain",

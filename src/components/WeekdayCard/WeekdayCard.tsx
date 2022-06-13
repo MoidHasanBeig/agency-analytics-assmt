@@ -21,10 +21,11 @@ class WeekdayCard extends React.Component<Props, State> {
     return (
       <div className="weekday-card-component">
         {this.props.todayWeather && (
-          <div>
-            <div>{this.props.todayWeather.day}</div>
-            <div>{this.props.todayWeather.temp}</div>
-            <div>{this.props.todayWeather.weather}</div>
+          <div className="weekday-content-container">
+            <div className="weekday-name">{this.props.todayWeather.day}</div>
+            <div className="weekday-temp">
+              {Math.floor(this.props.todayWeather.temp)}&deg;
+            </div>
           </div>
         )}
       </div>

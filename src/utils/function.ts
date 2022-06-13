@@ -13,7 +13,11 @@ export const fetchWeather = async (
     const cityWeatherData: CityWeatherData = [];
     for (let i = 0; i <= 4; i++) {
       const dailyWeatherData: DailyWeatherData = {
-        day: Object.values(Day)[i],
+        day: Object.values(Day)[
+          new Date(
+            (weatherJson.daily[i].dt + weatherJson.timezone_offset) * 1000
+          ).getDay()
+        ],
         temp: weatherJson.daily[i].temp.max,
         weather: weatherJson.daily[i].weather[0].main,
       };
