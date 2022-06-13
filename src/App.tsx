@@ -29,12 +29,14 @@ class App extends React.Component<{}, State> {
   private setWeather = (city: City): void => {
     this.setState({
       isFetching: true,
+      fetchFailed: false,
     });
     fetchWeather(city).then((res) => {
       // null response indicates an error while fetching from the API
       if (!res) {
         this.setState({
           fetchFailed: true,
+          isFetching: false,
         });
       } else {
         this.setState({
@@ -61,7 +63,11 @@ class App extends React.Component<{}, State> {
       <div className="App">
         <ErrorBoundary>
           <CitySelector city={this.state.selectedCity} setCity={this.setCity} />
-          <DisplayGrid />
+          <DisplayGrid
+            isFetching={this.state.isFetching}
+            fetchFailed={this.state.fetchFailed}
+            weatherData={this.state.weatherData}
+          />
         </ErrorBoundary>
       </div>
     );

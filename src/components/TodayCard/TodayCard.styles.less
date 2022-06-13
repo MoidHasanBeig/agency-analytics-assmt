@@ -4,4 +4,18 @@
     width: 100%;
     height: 55%;
     outline: @border-size solid @border-color;
+    display: flex;
+    font-family: 'Text light';
+    font-size: @text-large;
+
+    .today-content-container {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+
+        .today-temp {
+            font-family: 'Numbers';
+            font-size: @number-large;
+        }
+    }
 }
