@@ -17,7 +17,7 @@ body {
 }
 html .App,
 body .App {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: #EEF6FB;
   color: #333339;
@@ -31,7 +31,7 @@ body .App {
 @media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1025px) {
   html,
   body {
-    font-size: 2vw;
+    font-size: 2.2vw;
   }
 }
 .error-ui {
@@ -57,6 +57,16 @@ body .App {
   flex-direction: row;
   height: 45%;
   overflow: hidden;
+}
+@media screen and (orientation: portrait) {
+  .display-grid-component {
+    width: 80vw;
+    height: 85vh;
+  }
+  .display-grid-component .weekday-cards-container {
+    flex-wrap: wrap;
+    height: 65%;
+  }
 }
 .city-selector-component {
   display: flex;
@@ -107,6 +117,11 @@ body .App {
   font-family: 'Numbers';
   font-size: 4rem;
 }
+@media screen and (orientation: portrait) {
+  .today-card-component {
+    height: 45%;
+  }
+}
 .weekday-card-component {
   width: 25%;
   height: 100%;
@@ -130,6 +145,12 @@ body .App {
 .weekday-card-component .weekday-content-container .weekday-temp {
   font-family: 'Numbers';
   font-size: 1.5rem;
+}
+@media screen and (orientation: portrait) {
+  .weekday-card-component {
+    width: 50%;
+    height: 50%;
+  }
 }
 .loader-component {
   display: flex;
