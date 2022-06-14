@@ -57,8 +57,6 @@ class App extends React.Component<{}, State> {
   }
 
   public render() {
-    console.log(this.state.weatherData);
-
     return (
       <div className="App">
         <ErrorBoundary>

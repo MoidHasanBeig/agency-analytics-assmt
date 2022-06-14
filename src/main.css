@@ -1,6 +1,19 @@
+@media only screen and (orientation: portrait) and (max-width: 767px) {
+  html,
+  body {
+    font-size: 3vw;
+  }
+}
+@media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1025px) {
+  html,
+  body {
+    font-size: 2vw;
+  }
+}
 html,
 body {
   margin: 0;
+  font-size: 1.1vw;
 }
 @font-face {
   font-family: 'Text light';
@@ -79,7 +92,18 @@ body .App {
   flex-direction: column;
   margin: auto;
 }
-.today-card-component .today-content-container .today-temp {
+.today-card-component .today-content-container .today-placeholder {
+  text-align: center;
+}
+.today-card-component .today-content-container .details-container {
+  display: flex;
+}
+.today-card-component .today-content-container .details-container .weather-icon-container {
+  font-size: 5rem;
+  display: flex;
+  margin-right: 2rem;
+}
+.today-card-component .today-content-container .details-container .today-temp {
   font-family: 'Numbers';
   font-size: 4rem;
 }
@@ -90,11 +114,18 @@ body .App {
   display: flex;
   font-family: 'Text light';
   font-size: 1.4rem;
+  text-align: center;
 }
 .weekday-card-component .weekday-content-container {
   display: flex;
   flex-direction: column;
   margin: auto;
+}
+.weekday-card-component .weekday-content-container .weekday-icon {
+  font-size: 2.5rem;
+  text-align: center;
+  display: flex;
+  margin: 1rem;
 }
 .weekday-card-component .weekday-content-container .weekday-temp {
   font-family: 'Numbers';
@@ -132,4 +163,10 @@ body .App {
   100% {
     transform: rotate(360deg);
   }
+}
+.weather-icon-component {
+  color: #5FB0E8;
+  opacity: 0.6;
+  display: flex;
+  margin: auto;
 }

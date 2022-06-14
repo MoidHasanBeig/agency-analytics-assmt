@@ -17,12 +17,19 @@ class TodayCard extends React.Component<Props> {
         {this.props.todayWeather && (
           <div className="today-content-container">
             <div className="today-placeholder">Today</div>
-            <WeatherIcon weather={this.props.todayWeather.weather} />
-            <div className="today-temp">
-              {Math.floor(this.props.todayWeather.temp)}&deg;
-            </div>
-            <div className="today-weather">
-              {this.props.todayWeather.weather}
+            <div className="details-container">
+              <div className="weather-icon-container">
+                <WeatherIcon weather={this.props.todayWeather.weather} />
+              </div>
+              <div className="weather-text-container">
+                {" "}
+                <div className="today-temp">
+                  {Math.floor(this.props.todayWeather.temp)}&deg;
+                </div>
+                <div className="today-weather">
+                  {this.props.todayWeather.weather}
+                </div>
+              </div>
             </div>
           </div>
         )}

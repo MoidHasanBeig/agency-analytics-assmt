@@ -13,9 +13,22 @@
         flex-direction: column;
         margin: auto;
 
-        .today-temp {
-            font-family: 'Numbers';
-            font-size: @number-large;
+        .today-placeholder {
+            text-align: center;
+        }
+
+        .details-container {
+            display: flex;
+
+            .weather-icon-container {
+                font-size: @icon-large;
+                display: flex;
+                margin-right: 2rem;
+            }
+            .today-temp {
+                font-family: 'Numbers';
+                font-size: @number-large;
+            }
         }
     }
 }
