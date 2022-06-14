@@ -3,6 +3,9 @@ import React from "react";
 // utils
 import { DailyWeatherData } from "../../utils/interfaces";
 
+// components
+import WeatherIcon from "../WeatherIcon/WeatherIcon";
+
 interface Props {
   todayWeather: DailyWeatherData | null;
 }
@@ -23,6 +26,9 @@ class WeekdayCard extends React.Component<Props, State> {
         {this.props.todayWeather && (
           <div className="weekday-content-container">
             <div className="weekday-name">{this.props.todayWeather.day}</div>
+            <div className="weekday-icon">
+              <WeatherIcon weather={this.props.todayWeather.weather} />
+            </div>
             <div className="weekday-temp">
               {Math.floor(this.props.todayWeather.temp)}&deg;
             </div>

@@ -7,11 +7,19 @@
     display: flex;
     font-family: 'Text light';
     font-size: @text-small;
+    text-align: center;
 
     .weekday-content-container {
         display: flex;
         flex-direction: column;
         margin: auto;
+
+        .weekday-icon {
+            font-size: @icon-small;
+            text-align: center;
+            display: flex;
+            margin: 1rem;
+        }
 
         .weekday-temp {
             font-family: 'Numbers';

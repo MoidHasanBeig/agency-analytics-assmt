@@ -9,6 +9,7 @@ import {
   faCloudShowersHeavy,
   faCloudShowersWater,
   faCloudBolt,
+  faWind,
 } from "@fortawesome/free-solid-svg-icons";
 
 // utils
@@ -31,7 +32,11 @@ class WeatherIcon extends React.Component<Props> {
   public render() {
     return (
       <div className="weather-icon-component">
-        <FontAwesomeIcon icon={this.iconSet[this.props.weather]} />
+        {this.props.weather in this.iconSet ? (
+          <FontAwesomeIcon icon={this.iconSet[this.props.weather]} />
+        ) : (
+          <FontAwesomeIcon icon={faWind} />
+        )}
       </div>
     );
   }
